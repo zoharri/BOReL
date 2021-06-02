@@ -29,8 +29,8 @@ def vis_train_tasks(env, goals):
 def eval_vae(dataset, vae, args):
 
     num_tasks = len(dataset)
-    reward_preds = np.zeros((num_tasks, args.trajectory_len))
-    rewards = np.zeros((num_tasks, args.trajectory_len))
+    reward_preds = np.zeros((10, args.trajectory_len))
+    rewards = np.zeros((10, args.trajectory_len))
     random_tasks = np.random.choice(len(dataset), 10)  # which trajectory to evaluate
 
     for task_idx, task in enumerate(random_tasks):
@@ -278,9 +278,9 @@ def train(vae, dataset, args):
 def main():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--env-type', default='gridworld')
-    # parser.add_argument('--env-type', default='point_robot_sparse')
+    parser.add_argument('--env-type', default='point_robot_sparse')
     # parser.add_argument('--env-type', default='cheetah_vel')
-    parser.add_argument('--env-type', default='ant_semicircle_sparse')
+    # parser.add_argument('--env-type', default='ant_semicircle_sparse')
     args, rest_args = parser.parse_known_args()
     env = args.env_type
 

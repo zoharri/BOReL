@@ -14,9 +14,9 @@ from offline_config import args_ant_semicircle_sparse, \
 def main():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--env-type', default='gridworld')
-    # parser.add_argument('--env-type', default='point_robot_sparse')
+    parser.add_argument('--env-type', default='point_robot_sparse')
     # parser.add_argument('--env-type', default='cheetah_vel')
-    parser.add_argument('--env-type', default='ant_semicircle_sparse')
+    # parser.add_argument('--env-type', default='ant_semicircle_sparse')
     args, rest_args = parser.parse_known_args()
     env = args.env_type
 

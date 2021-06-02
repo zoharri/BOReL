@@ -21,7 +21,7 @@ def get_args(rest_args):
     parser.add_argument('--meta-batch', type=int, default=16,
                         help='number of tasks to average the gradient across')
 
-    parser.add_argument('--num-iters', type=int, default=5000, help='number meta-training iterates')
+    parser.add_argument('--num-iters', type=int, default=50, help='number meta-training iterates')
     parser.add_argument('--rl-updates-per-iter', type=int, default=1000, help='number of RL steps per iteration')
     parser.add_argument('--batch-size', type=int, default=256, help='number of transitions in RL batch (per task)')
 
@@ -41,7 +41,7 @@ def get_args(rest_args):
                         help='soft target network update (default: 5e-3)')
     parser.add_argument('--eval-deterministic', default=True)
 
-    parser.add_argument('--transform-data-bamdp', default=False,
+    parser.add_argument('--transform-data-bamdp', default=True,
                         help='If true - perform state relabelling to bamdp, else - use existing data')
 
     # logging, saving, evaluation
@@ -64,8 +64,8 @@ def get_args(rest_args):
     parser.add_argument('--data-dir', default='data')
     parser.add_argument('--main-data-dir', default='./batch_data')
     parser.add_argument('--vae-dir', default='./trained_vae')
-
-    parser.add_argument('--vae-model-name', default='relabel__31_05_23_54_02')
+    parser.add_argument('--vae-model-name', default='relabel_rand_init__29_05_22_29_37')
+    #parser.add_argument('--vae-model-name', default='relabel__31_05_23_54_02')
     # parser.add_argument('--vae-model-name', default='no_relabel__09_08_11_10_10')
 
     args = parser.parse_args(rest_args)

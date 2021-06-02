@@ -17,7 +17,7 @@ from utils import evaluation as utl_eval
 from utils.tb_logger import TBLogger
 from models.vae import VAE
 from models.policy import TanhGaussianPolicy
-
+from tqdm import tqdm
 
 class MetaLearner:
     """
@@ -165,7 +165,7 @@ class MetaLearner:
         """
 
         self._start_training()
-        for iter_ in range(self.args.num_iters):
+        for iter_ in tqdm(range(self.args.num_iters)):
             self.training_mode(True)
             # switch to belief reward
             if self.args.switch_to_belief_reward is not None and iter_ >= self.args.switch_to_belief_reward:

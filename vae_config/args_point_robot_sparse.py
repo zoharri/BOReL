@@ -60,7 +60,7 @@ def get_args(rest_args):
     parser.add_argument('--eval-interval', default=20)
 
     parser.add_argument('--main-data-dir', default='./batch_data')
-    parser.add_argument('--data-dir', default='data_rand_init')
+    parser.add_argument('--data-dir', default='data')
     parser.add_argument('--save-dir-prefix', default='relabel_rand_init')
     # parser.add_argument('--save-dir-prefix', default='no_relabel_rand_init')
     parser.add_argument('--log-tensorboard', default=True)
